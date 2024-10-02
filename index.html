@@ -17,13 +17,14 @@
             text-align: center;
             position: relative;
             min-height: 100vh;
+            padding-bottom: 80px; /* Add padding at the bottom */
         }
 
         h1 {
             font-family: 'Amiri', serif; /* Arabic font for the title */
             color: #333;
             font-size: 2.5em;
-            margin-bottom: 20px;
+            margin: 60px 0 20px; /* Added margin-top for space */
         }
 
         ul {
@@ -66,10 +67,12 @@
         @media (max-width: 600px) {
             body {
                 padding: 10px;
+                padding-bottom: 100px; /* Increased padding-bottom for mobile */
             }
 
             h1 {
                 font-size: 2em;
+                margin-top: 80px; /* Increased margin-top for better spacing on mobile */
             }
 
             a, .phone-number {
@@ -91,9 +94,10 @@
 
         /* Footer text */
         .footer {
-            position: absolute;
-            bottom: 10px;
+            position: absolute; /* Change to absolute */
+            bottom: 20px; /* Distance from the bottom */
             left: 10px;
+            right: 10px; /* Allow for left and right margins */
             font-family: 'Arial', sans-serif;
             font-size: 1em;
             color: #555;
@@ -101,9 +105,9 @@
 
         /* Language switch button */
         .language-switch {
-            position: absolute;
-            top: 20px;
-            right: 20px;
+            position: fixed; /* Change to fixed */
+            top: 20px; /* Distance from the top */
+            right: 20px; /* Distance from the right */
             padding: 10px 20px;
             background-color: #9cd0d3;
             color: white;
@@ -139,9 +143,9 @@
 
     <!-- Footer text -->
     <div class="footer">
-        Made with <3 by: Ahmed Abdo
+        Made with ❤ by: Ahmed Abdo
     </div>
-
+	
     <script>
         // Function to copy phone number to clipboard
         function copyPhoneNumber() {
