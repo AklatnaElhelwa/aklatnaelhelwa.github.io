@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Socials</title>
+    <title>اكلتنا الحلوة</title>
     <style>
+        /* Import cool Arabic fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cairo:wght@600&display=swap');
+        
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f4f4f4;
@@ -12,9 +15,12 @@
             padding: 20px;
             color: #333;
             text-align: center;
+            position: relative;
+            min-height: 100vh;
         }
 
         h1 {
+            font-family: 'Amiri', serif; /* Arabic font for the title */
             color: #4CAF50;
             font-size: 2.5em;
             margin-bottom: 20px;
@@ -29,15 +35,28 @@
             margin: 15px 0;
         }
 
-        a {
+        a, .phone-number {
+            display: inline-block;
             text-decoration: none;
             font-size: 1.5em;
             padding: 10px 20px;
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
+            color: #333;
+            border: 2px solid #4CAF50;
+            font-family: 'Cairo', sans-serif; /* Arabic font for the buttons */
         }
 
         a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .phone-number {
+            cursor: pointer;
+        }
+
+        .phone-number:active {
             background-color: #4CAF50;
             color: white;
         }
@@ -52,18 +71,99 @@
                 font-size: 2em;
             }
 
-            a {
+            a, .phone-number {
                 font-size: 1.2em;
             }
+        }
+
+        /* Banner below buttons */
+        .bottom-banner {
+            margin-top: 40px; /* Adds spacing between buttons and banner */
+            text-align: center;
+        }
+
+        .bottom-banner img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+        }
+
+        /* Footer text */
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-family: 'Arial', sans-serif;
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Language switch button */
+        .language-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .language-switch:hover {
+            background-color: #45a049;
         }
     </style>
 </head>
 <body>
-    <h1>Follow Me</h1>
+    <h1>دا البيدج والجروبات بتاعتي هتنورني فيها يافندم</h1>
+
+    <!-- Language switch button -->
+    <button class="language-switch" onclick="switchLanguage()">Switch to English</button>
+
     <ul>
-        <li><a href="https://twitter.com/yourusername" target="_blank">Twitter</a></li>
-        <li><a href="https://instagram.com/yourusername" target="_blank">Instagram</a></li>
-        <li><a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a></li>
+        <li><a href="https://chat.whatsapp.com/JiWEcyn7s26JEZWvVl9eJZ" target="_blank">لينك جروب واتس</a></li>
+        <li><a href="https://www.facebook.com/groups/450628482329791/?ref=share" target="_blank">لينك جروب فيسبوك</a></li>
+        <li><a href="https://www.instagram.com/aklitna.el7lwa?igsh=bWluZWE5ZmE1MDY3" target="_blank">لينك صفحة الانستجرام</a></li>
+        <li><a href="https://www.threads.net/@aklitna.el7lwa?xmt=AQGzzPjZ8kaLMhNjPjJd46oCAzZ0gNQsF9KZjnEdpaBFRA8" target="_blank">لينك صفحة ثريدز</a></li>
+        <li><span class="phone-number" onclick="copyPhoneNumber()">+رقم التواصل وفودافون كاش 201062139525</span></li>
     </ul>
+
+    <!-- Bottom banner -->
+    <div class="bottom-banner">
+        <img src="https://cdn.discordapp.com/attachments/1263627441054814249/1290932587207983155/Capture.PNG?ex=66fe4229&is=66fcf0a9&hm=640bd626d20debb83534764e81341967c04fd9668e9d566dd96423a23f3bc741&" alt="Bottom Banner">
+    </div>
+
+    <!-- Footer text -->
+    <div class="footer">
+        Made with <3 by: Ahmed Abdo
+    </div>
+
+    <script>
+        // Function to copy phone number to clipboard
+        function copyPhoneNumber() {
+            const phoneNumber = '+201062139525';
+            navigator.clipboard.writeText(phoneNumber).then(() => {
+                alert('تم نسخ رقم الهاتف');
+            }).catch(err => {
+                alert('فشل نسخ رقم الهاتف');
+            });
+        }
+
+        // Function to switch language
+        function switchLanguage() {
+            document.documentElement.lang = document.documentElement.lang === 'ar' ? 'en' : 'ar';
+            const isArabic = document.documentElement.lang === 'ar';
+            document.querySelector('h1').innerText = isArabic ? 'دا البيدج والجروبات بتاعتي هتنورني فيها يافندم' : 'Here are our groups and pages, feel free to join!';
+            document.querySelector('.language-switch').innerText = isArabic ? 'Switch to English' : 'التبديل إلى العربية';
+            document.querySelectorAll('ul li a')[0].innerText = isArabic ? 'لينك جروب واتس' : 'WhatsApp Group Link';
+            document.querySelectorAll('ul li a')[1].innerText = isArabic ? 'لينك جروب فيسبوك' : 'Facebook Group Link';
+            document.querySelectorAll('ul li a')[2].innerText = isArabic ? 'لينك صفحة الانستجرام' : 'Instagram Page Link';
+            document.querySelectorAll('ul li a')[3].innerText = isArabic ? 'لينك صفحة ثريدز' : 'Threads Page Link';
+            document.querySelector('.phone-number').innerText = isArabic ? '+رقم التواصل وفودافون كاش 201062139525' : 'Contact & Vodafone Cash: +201062139525';
+        }
+    </script>
 </body>
 </html>
