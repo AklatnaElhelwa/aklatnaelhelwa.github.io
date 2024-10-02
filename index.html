@@ -21,7 +21,7 @@
 
         h1 {
             font-family: 'Amiri', serif; /* Arabic font for the title */
-            color: #4CAF50;
+            color: #333;
             font-size: 2.5em;
             margin-bottom: 20px;
         }
@@ -43,12 +43,13 @@
             border-radius: 5px;
             transition: background-color 0.3s, color 0.3s;
             color: #333;
-            border: 2px solid #4CAF50;
+            background-color: white; /* Set button background color to white */
+            border: 2px solid #9cd0d3;
             font-family: 'Cairo', sans-serif; /* Arabic font for the buttons */
         }
 
-        a:hover {
-            background-color: #4CAF50;
+        a:hover, .phone-number:hover {
+            background-color: #9cd0d3; /* Change to #9cd0d3 when hovered */
             color: white;
         }
 
@@ -57,7 +58,7 @@
         }
 
         .phone-number:active {
-            background-color: #4CAF50;
+            background-color: #9cd0d3;
             color: white;
         }
 
@@ -104,7 +105,7 @@
             top: 20px;
             right: 20px;
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: #9cd0d3;
             color: white;
             border: none;
             border-radius: 5px;
@@ -113,7 +114,7 @@
         }
 
         .language-switch:hover {
-            background-color: #45a049;
+            background-color: #8cb9bf;
         }
     </style>
 </head>
@@ -146,9 +147,9 @@
         function copyPhoneNumber() {
             const phoneNumber = '+201062139525';
             navigator.clipboard.writeText(phoneNumber).then(() => {
-                alert('تم نسخ رقم الهاتف');
+                alert('Copied successfully! / تم نسخ رقم الهاتف');
             }).catch(err => {
-                alert('فشل نسخ رقم الهاتف');
+                alert('Failed to copy the number. / فشل نسخ رقم الهاتف');
             });
         }
 
